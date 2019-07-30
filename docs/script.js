@@ -1,13 +1,13 @@
-document.writeln('<pre>world');
-document.writeln(location.href);
 var home = location.href;
 if (location.protocol=="file:")
     var home = 'https://checkered-rabbit.github.io/proxy-git/';
-document.writeln(home);
 {
 let [_,orgName,repoName] = home.match(/\/\/(.*?)\..*\/(.*)\//);
 let glitchImport = 
-    'https://glitch.com/edit/#!/import/github/org-name/repo-name';
-debugger;
+    `https://glitch.com/edit/#!/import/github/` +
+    `${orgName}/${repoName}` + 
+    `?org=${orgName}&repo=${repoName}`;
+console.log(glitchImport);
+document.writeln(
+    `<a href="${glitchImport}">Remix on Glitch</a>`);
 }
-document.writeln('</pre>');
