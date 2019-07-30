@@ -6,7 +6,8 @@ if (location.protocol=="file:")
     let glitchImport = 
         `https://glitch.com/edit/#!/import/github/` +
         `${orgName}/${repoName}` + 
-        `?org=${orgName}&repo=${repoName}` +
+        `?user_repo=${orgName}/${repoName}` +
+        `&org=${orgName}&repo=${repoName}` +
         `&ssh=git@github.com:${orgName}/${repoName}.git` +
         `&https=https://github.com/${orgName}/${repoName}.git`;
     console.log(glitchImport);
@@ -24,4 +25,9 @@ if (location.protocol=="file:")
         `<a href="${glitchImport}">Remix on Glitch</a>`
     )
 
+    document.writeln(
+`<pre>
+git pull https://github.com/${orgName}/${repoName}.git
+</pre>`
+    );
 }
