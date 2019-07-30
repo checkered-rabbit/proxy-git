@@ -5,7 +5,9 @@ if (location.protocol=="file:")
     var home = 'https://checkered-rabbit.github.io/proxy-git/';
 document.writeln(home);
 {
-let project = home.match(/.*\/(.*)\//)[1];
+let [_,orgName,repoName] = home.match(/\/\/(.*?)\..*\/(.*)\//);
+let glitchImport = 
+    'https://glitch.com/edit/#!/import/github/org-name/repo-name';
 debugger;
 }
 document.writeln('</pre>');
