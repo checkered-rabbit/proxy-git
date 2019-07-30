@@ -6,7 +6,9 @@ if (location.protocol=="file:")
     let glitchImport = 
         `https://glitch.com/edit/#!/import/github/` +
         `${orgName}/${repoName}` + 
-        `?org=${orgName}&repo=${repoName}`;
+        `?org=${orgName}&repo=${repoName}` +
+        `&ssh=git@github.com:${orgName}/${repoName}.git` +
+        `&https=https://github.com/${orgName}/${repoName}.git`;
     console.log(glitchImport);
 
     document.writeln(
